@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>NHK EASY NEWS SEARCH</title>
+</head>
+
+<body>
+	<div class="sfb">
+		<h1 class="sc">NHK EASY NEWS SEARCH</h1>
+		<div class="sc">
+			<form action="https://global.bing.com/search" id="sfgo">
+				<input class="sf" type="text" name="q" value="" required>
+				<input type="hidden" name="site" value="newswebeasy.github.io/news/&ensearch=1&FORM=BESBTB">
+				<input class="is" type="submit" value="Search">
+			</form>
+		</div>
+		<div id="ul" class="sc">
+			<ul>
+				<li><a href="https://global.bing.com/search">搜索支持: Bing Global</a></li>　・　
+				<li><a href="https://newswebeasy.github.io/news/">检索内容来自 NHK </a></li>　
+				<br />
+				<a href="https://disism.com" target="_blank">disism.com</a>
+				<br />
+			</ul>
+		</div>
+	</div>
+	<style>
+		#ul ul li {
+			display:inline;
+		}
+		.sfb {
+    		margin-top: 100px;
+		}
+		.sc {
+			text-align: center;
+		}
+		.sf {
+			border: 1px solid #000000;
+			border-radius: 2rem;
+			padding: 10px;
+			width: 70%;
+		}
+		.is {margin-top: 10px;
+			padding: 6px 10px;
+			padding: 0.428571429rem 0.714285714rem;
+			font-size: 14px;
+			line-height: 1.428571429;
+			font-weight: normal;
+			background-color: #ffffff;
+			background-repeat: repeat-x;
+			border: 1px solid #000000;
+			border-radius: 2rem;
+			padding: 10px 20px;
+		}
+		
+	</style>
+<script>
+	var searchForm = document.getElementById('sfgo');
+	searchForm.onsubmit = function(){
+		var url = this.action;
+		var q = this.children['q'].value;
+		var site = this.children['site'].value;
+		var url = url + '?q='+q+' site:'+ site;
+		window.open(url);
+		return false;
+	};
+</script>
+</body>
+</html>
